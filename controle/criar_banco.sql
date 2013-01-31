@@ -5,7 +5,7 @@ CREATE TABLE clientes (
 	id int NOT NULL auto_increment,
 	nome varchar(255) NOT NULL,
 	telefone varchar(255) NOT NULL,
-	cnpj char(18) NOT NULL,
+	cnpj char(18) NULL,
 	endereco varchar(255) NOT NULL,
 	divida int NULL,
 	data_pagamento date NULL,
@@ -23,6 +23,6 @@ CREATE TABLE estoque (
 	PRIMARY KEY (id)
 );
 
-INSERT INTO clientes (nome, telefone, cnpj, endereco) values ('ItCursos', '3208-6666', '12.123.123/1234-12', 'Rua Miguel Castro'); 
+INSERT INTO clientes (nome, telefone, cnpj, endereco) values ('Valdet', '3208-6666', '12.123.123/1234-12', 'Rua Miguel Castro'),('Karol Reinaldo', '3208-5798', '13.123.123/1234-12', 'Rua Miguel Castro'); 
 
 INSERT INTO estoque (produto, preco_produto, quantidade_produto) values ('Saia curta', 35, 15),('Saia longa rodada', 55, 3); 
