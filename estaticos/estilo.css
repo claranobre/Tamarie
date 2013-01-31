@@ -29,14 +29,6 @@ table.lista td {
   background-color: #ffffff;
 }
 
-input.checkbox {
-  max-width: 400px;
-}
-
-table.form td {
-  max-width: 150px;
-}
-
   .form_padrao {width:450px; float:left;}
     .form_padrao fieldset {border:0;}
       .form_padrao span {color:#878055;}

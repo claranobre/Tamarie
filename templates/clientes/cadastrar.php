@@ -4,19 +4,19 @@
 	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
 		<tr>
 			<td>Digite o nome do cliente: </td>
-			<td><input name='nome' required/></td>
+			<td><input type='text' name='nome' required/></td>
 		</tr>
 		<tr>
 			<td>Digite a razao social do cliente: </td>
-			<td><input name='razao_social' required/></td>
+			<td><input type='text' name='razao_social' required/></td>
 		</tr>
 		<tr>
 			<td>Digite o nome o cnpj do cliente: </td>
-			<td><input name='cnpj' placeholder='Ex: 12.123.123/124-12' required/></td>
+			<td><input type='text' name='cnpj' placeholder='Ex: 12.123.123/124-12' required/></td>
 		</tr>
 		<tr>
 			<td>Digite o endereco do cliente: </td>
-			<td><input name='endereco' required/></td>
+			<td><input type='text' name='endereco' required/></td>
 		</tr>
 		<tr>
 			<td>Selecione o status do cliente: </td>
