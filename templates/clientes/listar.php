@@ -22,7 +22,12 @@
 		<td><?php echo $cliente['telefone']?></td>
 		<td><?php echo $cliente['cnpj']?></td>
 		<td><?php echo $cliente['endereco']?></td>
-		<td>Divida</td>
+		<td><?php echo 'R$ '.$cliente['divida']?></td>
+
+
+		<!-- STATUS PAGAMENTO == 'EM DIA' OU DIVIDA E DATA_PAGAMENTO -->
+
+
 		<td>Data Pagamento</td>
 		<td>Status Pagamento</td>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/pagar_divida/?id=<?php echo $cliente['id']; ?>'>Pagar Divida</a></td>
