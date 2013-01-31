@@ -1,4 +1,3 @@
-<?php requerer_usuario('agendamento'); ?>
 <br /><br />
 <h2>Cadastrar Cliente</h2>
 <table>
