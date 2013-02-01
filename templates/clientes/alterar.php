@@ -15,8 +15,8 @@
 					<td><input type='text' name='telefone' value='<?php echo $cliente['telefone']?>' required/></td>
 				</tr>
 				<tr>
-					<td>Modifique o cnpj do cliente:</td>
-					<td><input type='text' name='cnpj' value='<?php echo $cliente['cnpj']?>' required/></td>
+					<td>Modifique o cnpj ou cpf do cliente:</td>
+					<td><input type='text' name='cnpj' value='<?php echo $cliente['cnpj_cpf']?>' /></td>
 				</tr>
 				<tr>
 					<td>Modifique o endereco do cliente:</td>

@@ -11,8 +11,8 @@
 			<td><input type='text' name='telefone' required/></td>
 		</tr>
 		<tr>
-			<td>Digite o nome o cnpj do cliente:</td>
-			<td><input type='text' name='cnpj' placeholder='Ex: 12.123.123/1234-12' required/></td>
+			<td>Digite o cnpj ou cpf do cliente:</td>
+			<td><input type='text' name='cnpj_cpf' /></td>
 		</tr>
 		<tr>
 			<td>Digite o endereco do cliente:</td>
