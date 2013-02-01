@@ -25,19 +25,27 @@
 		<td><?php echo $cliente['telefone']?></td>
 		<td><?php echo $cliente['cnpj']?></td>
 		<td><?php echo $cliente['endereco']?></td>
-		<?php  
-		    if ($cliente['status_pagamento'] == 'quite'):
-		?>    	
-		<td>Sem Divida</td>
-		<td>Nenhum pagamento agendado</td>
+		<td>
+			<?php 
+				if ($cliente['status_pagamento'] == 'quite'){
+					echo 'sem divida';
+				}
+				else{
+				echo 'R$ '.$cliente['divida'];
+				}
+			?>
+		</td>
+		<td>
+			<?php 
+				if ($cliente['status_pagamento'] == 'quite' || $cliente['data_pagamento'] == '0000-00-00'){
+					echo 'sem pagamento agendado';
+				}
+				else{
+				echo converter_data($cliente['data_pagamento']);
+				}
+			?>
+		</td>	
 		<?php 
-			endif;
-			if ($cliente['status_pagamento'] == 'em divida'):	
-		?>
-		<td><?php echo 'R$ '.$cliente['divida']?></td>
-		<td><?php echo converter_data($cliente['data_pagamento'])?></td>	
-		<?php  
-		    endif;
 		    if ($cliente['status_pagamento'] == 'quite'):
 		?>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
@@ -46,9 +54,9 @@
 		    endif;
 		    if ($cliente['status_pagamento'] == 'em divida'):
 		?>
-		<td><a href='/<?php echo BASE; ?>/index.php/clientes/pagar_divida/?id=<?php echo $cliente['id']; ?>'>Pagar Divida</a></td>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
+		<td><a href='/<?php echo BASE; ?>/index.php/clientes/pagar_divida/?id=<?php echo $cliente['id']; ?>'>Pagar Divida</a></td>
 		<?php  
 		    endif;
 		?>
