@@ -9,7 +9,7 @@ CREATE TABLE clientes (
 	endereco varchar(255) NOT NULL,
 	divida int NULL,
 	data_pagamento date NULL,
-	status_pagamento varchar(255) NULL,
+	status varchar(255) NULL,
 	PRIMARY KEY (id),
 	UNIQUE (nome),
 	UNIQUE (cnpj)
@@ -23,6 +23,6 @@ CREATE TABLE estoque (
 	PRIMARY KEY (id)
 );
 
-INSERT INTO clientes (nome, telefone, cnpj, endereco, status_pagamento) values ('Valdet', '3208-6666', '12.123.123/1234-12', 'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '3208-5798', '13.123.123/1234-12', 'Rua Miguel Castro', 'em divida'); 
+INSERT INTO clientes (nome, telefone, cnpj, endereco, status) values ('Valdet', '3208-6666', '12.123.123/1234-12', 'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '3208-5798', '13.123.123/1234-12', 'Rua Miguel Castro', 'em divida'); 
 
 INSERT INTO estoque (produto, preco_produto, quantidade_produto) values ('Saia curta', 27.45, 15),('Saia longa rodada', 55, 3); 

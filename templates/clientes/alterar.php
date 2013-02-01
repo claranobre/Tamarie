@@ -39,13 +39,13 @@
 <?php
 
 	if (count($_POST) > 0){
-		settype($_POST['divida'], 'int');
+		$_POST['divida'] = converter_str_para_valor($_POST['divida']);
 		$_POST['data_pagamento'] = reverter_data($_POST['data_pagamento']);
 		if ($_POST['divida'] > 0) {
-			$_POST['status_pagamento'] = 'em divida';
+			$_POST['status'] = 'em divida';
 		}
 		else{
-			$_POST['status_pagamento'] = 'quite';
+			$_POST['status'] = 'quite';
 		}
 		update($_POST, $_GET['id'], 'clientes');
 		ob_clean();

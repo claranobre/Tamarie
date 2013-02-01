@@ -12,4 +12,18 @@
 		return $dados_tratado;
 	}
 
+	function converter_str_para_valor($dados){
+		$dados = str_replace(',', '.', $dados);
+		$dados = str_replace('R', '', $dados);
+		$dados = str_replace('$', '', $dados);
+		$dados = str_replace('r', '', $dados);
+		$dados = str_replace('e', '', $dados);
+		$dados = str_replace('a', '', $dados);
+		$dados = str_replace('i', '', $dados);
+		$dados = str_replace('s', '', $dados);
+		$dados = str_replace(' ', '', $dados);
+		settype($dados, 'float');
+		return $dados;
+	}
+
 ?>

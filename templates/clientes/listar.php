@@ -17,7 +17,7 @@
 	$clientes = select_all('clientes');
 	foreach ($clientes as $cliente):
 		if ($cliente['divida'] == 0){
-			$cliente['status_pagamento'] = 'quite';
+			$cliente['status'] = 'quite';
 		}
 ?>
 	<tr>
@@ -27,7 +27,7 @@
 		<td><?php echo $cliente['endereco']?></td>
 		<td>
 			<?php 
-				if ($cliente['status_pagamento'] == 'quite'){
+				if ($cliente['status'] == 'quite'){
 					echo 'sem divida';
 				}
 				else{
@@ -37,7 +37,7 @@
 		</td>
 		<td>
 			<?php 
-				if ($cliente['status_pagamento'] == 'quite' || $cliente['data_pagamento'] == '0000-00-00'){
+				if ($cliente['status'] == 'quite' || $cliente['data_pagamento'] == '0000-00-00'){
 					echo 'sem pagamento agendado';
 				}
 				else{
@@ -46,13 +46,13 @@
 			?>
 		</td>	
 		<?php 
-		    if ($cliente['status_pagamento'] == 'quite'):
+		    if ($cliente['status'] == 'quite'):
 		?>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
 		<?php  
 		    endif;
-		    if ($cliente['status_pagamento'] == 'em divida'):
+		    if ($cliente['status'] == 'em divida'):
 		?>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
 		<td><a href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
