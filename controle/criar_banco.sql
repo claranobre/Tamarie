@@ -17,12 +17,12 @@ CREATE TABLE clientes (
 CREATE TABLE estoque (
 	id int NOT NULL auto_increment,
 	produto varchar(255) NOT NULL,
-	preco_produto int NOT NULL,
+	preco_produto float NOT NULL,
 	quantidade_produto int NOT NULL,
 	descricao_produto varchar(255) NULL,
 	PRIMARY KEY (id)
 );
 
-INSERT INTO clientes (nome, telefone, cnpj, endereco) values ('Valdet', '3208-6666', '12.123.123/1234-12', 'Rua Miguel Castro'),('Karol Reinaldo', '3208-5798', '13.123.123/1234-12', 'Rua Miguel Castro'); 
+INSERT INTO clientes (nome, telefone, cnpj, endereco, status_pagamento) values ('Valdet', '3208-6666', '12.123.123/1234-12', 'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '3208-5798', '13.123.123/1234-12', 'Rua Miguel Castro', 'em divida'); 
 
-INSERT INTO estoque (produto, preco_produto, quantidade_produto) values ('Saia curta', 35, 15),('Saia longa rodada', 55, 3); 
+INSERT INTO estoque (produto, preco_produto, quantidade_produto) values ('Saia curta', 27.45, 15),('Saia longa rodada', 55, 3); 
