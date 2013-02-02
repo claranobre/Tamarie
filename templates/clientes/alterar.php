@@ -1,40 +1,40 @@
 <br /><br />
 <h2>Alterar Dados</h2>
 
-	<table>
-		<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id'];?>' method='post'>
+<table>
+	<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id'];?>' method='post'>
 <?php
-	$cliente = buscar_por_id('clientes',$_GET['id']);
+$cliente = buscar_por_id('clientes',$_GET['id']);
 ?>
-			    <tr>
-					<td>Modifique o nome do cliente:</td>
-					<td><input type='text' name='nome' value='<?php echo $cliente['nome']?>' required/></td>
-				</tr>
-				<tr>
-					<td>Modifique o telefone do cliente:</td>
-					<td><input type='text' name='telefone' value='<?php echo $cliente['telefone']?>' required/></td>
-				</tr>
-				<tr>
-					<td>Modifique o cnpj ou cpf do cliente:</td>
-					<td><input type='text' name='cnpj' value='<?php echo $cliente['cnpj_cpf']?>' /></td>
-				</tr>
-				<tr>
-					<td>Modifique o endereco do cliente:</td>
-					<td><input type='text' name='endereco' value='<?php echo $cliente['endereco']?>' required/></td>
-				</tr>
-				<tr>
-					<td>Modifique a divida do cliente (em reais):</td>
-					<td><input type='text' name='divida' value='<?php echo $cliente['divida']?>' /></td>
-				</tr>
-				<tr>
-					<td>Modifique a data de pagamento do cliente:</td>
-					<td><input type='text' name='data_pagamento' value='<?php echo converter_data($cliente['data_pagamento']);?>' /></td>
-				</tr>
-				<tr>
-					<td><button type='submit'>Enviar</button>
-				</tr>
-		</form>
-	</table>
+		    <tr>
+				<td>Modifique o nome do cliente:</td>
+				<td><input type='text' name='nome' value='<?php echo $cliente['nome']?>' required/></td>
+			</tr>
+			<tr>
+				<td>Modifique o telefone do cliente:</td>
+				<td><input type='text' name='telefone' value='<?php echo $cliente['telefone']?>' required/></td>
+			</tr>
+			<tr>
+				<td>Modifique o cnpj ou cpf do cliente:</td>
+				<td><input type='text' name='cnpj' value='<?php echo $cliente['cnpj_cpf']?>' /></td>
+			</tr>
+			<tr>
+				<td>Modifique o endereco do cliente:</td>
+				<td><input type='text' name='endereco' value='<?php echo $cliente['endereco']?>' required/></td>
+			</tr>
+			<tr>
+				<td>Modifique a divida do cliente (em reais):</td>
+				<td><input type='text' name='divida' value='<?php echo $cliente['divida']?>' /></td>
+			</tr>
+			<tr>
+				<td>Modifique a data de pagamento do cliente:</td>
+				<td><input type='text' name='data_pagamento' value='<?php echo converter_data($cliente['data_pagamento']);?>' /></td>
+			</tr>
+			<tr>
+				<td><button type='submit'>Enviar</button>
+			</tr>
+	</form>
+</table>
 
 <?php
 

@@ -3,30 +3,28 @@
 <table>
 	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
 		<tr>
-			<td>Digite o nome do cliente:</td>
+			<td>Nome do cliente:</td>
 			<td><input type='text' name='nome' required/></td>
 		</tr>
 		<tr>
-			<td>Digite o telefone do cliente:</td>
+			<td>Telefone do cliente:</td>
 			<td><input type='text' name='telefone' required/></td>
 		</tr>
 		<tr>
-			<td>Digite o cnpj ou cpf do cliente:</td>
+			<td>Cnpj ou cpf do cliente:</td>
 			<td><input type='text' name='cnpj_cpf' /></td>
 		</tr>
 		<tr>
-			<td>Digite o endereco do cliente:</td>
+			<td>Endereco do cliente:</td>
 			<td><input type='text' name='endereco' required/></td>
 		</tr>
 		<tr>
-			<td>Digite a divida do cliente (em R$):
+			<td>Dívida do cliente (em R$):
 			</td>
 			<td><input type='text' name='divida' /></td>
 		</tr>
 		<tr>
-			<td>Digite uma data para o<br />
-				pagamento do cliente:				
-			</td>
+			<td>Data de pagamento:</td>
 			<td><input type='text' name='data_pagamento' value='00/00/0000' /></td>
 		</tr>
 		<tr>
