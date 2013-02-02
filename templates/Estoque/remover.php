@@ -1,4 +1,5 @@
-<br /><br />
-<?php  
-    echo 'Codigo pra programar remover itens de estoque.';
+<?php 
+	delete($_GET['id'],'estoque');	
+	ob_clean();
+	header('LOCATION: /'.BASE.'/index.php/estoque/listar/');
 ?>

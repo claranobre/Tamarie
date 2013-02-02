@@ -16,7 +16,7 @@ CREATE TABLE clientes (
 );
 CREATE TABLE estoque (
 	id int NOT NULL auto_increment,
-	produto varchar(255) NOT NULL,
+	nome_produto varchar(255) NOT NULL,
 	preco_produto float NOT NULL,
 	quantidade_produto int NOT NULL,
 	descricao_produto varchar(255) NULL,
@@ -25,4 +25,4 @@ CREATE TABLE estoque (
 
 INSERT INTO clientes (nome, telefone, endereco, status) values ('Valdet', '3208-6666',  'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '3208-5798', 'Rua Miguel Castro', 'em divida'); 
 
-INSERT INTO estoque (produto, preco_produto, quantidade_produto) values ('Saia curta', 27.45, 15),('Saia longa rodada', 55, 3); 
+INSERT INTO estoque (nome_produto, preco_produto, quantidade_produto) values ('Saia curta', 27.45, 15),('Saia longa rodada', 55, 3); 

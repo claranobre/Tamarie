@@ -38,7 +38,7 @@
 <?php 
 	if (count($_POST) > 0){
 		$_POST['data_pagamento'] = reverter_data($_POST['data_pagamento']);
-		$_POST['divida'] = converter_str_para_valor($_POST['divida']);
+		$_POST['divida'] = converter_float($_POST['divida']);
 		if ($_POST['divida'] == 0){
 			$_POST['status'] = 'quite';
 		}

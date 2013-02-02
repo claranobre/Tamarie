@@ -12,7 +12,7 @@
 		return $dados_tratado;
 	}
 
-	function converter_str_para_valor($dados){
+	function converter_float($dados){
 		$dados = str_replace(',', '.', $dados);
 		$dados = str_replace('R', '', $dados);
 		$dados = str_replace('$', '', $dados);
@@ -23,6 +23,11 @@
 		$dados = str_replace('s', '', $dados);
 		$dados = str_replace(' ', '', $dados);
 		settype($dados, 'float');
+		return $dados;
+	}
+
+	function reverter_float($dados){
+		$dados = str_replace('.', ',', $dados);
 		return $dados;
 	}
 
