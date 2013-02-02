@@ -20,6 +20,7 @@ CREATE TABLE estoque (
 	preco_produto float NOT NULL,
 	quantidade_produto int NOT NULL,
 	descricao_produto varchar(255) NULL,
+	UNIQUE (nome_produto),
 	PRIMARY KEY (id)
 );
 
