@@ -10,16 +10,16 @@
 			<td><input type='text' name='nome_produto' value='<?php echo $produto['nome_produto']; ?>' required /></td>
 		</tr>
 		<tr>
+			<td>Referencia do produto:</td>
+			<td><input type='text' name='referencia' value='<?php echo $produto['referencia']; ?>' required /></td>
+		</tr>
+		<tr>
 			<td>Preço do produto (em R$):</td>
 			<td><input type='text' name='preco_produto' value='<?php echo reverter_float($produto['preco_produto']); ?>' required /></td>
 		</tr>
 		<tr>
 			<td>Quantidade de estoque:</td>
 			<td><input type='text' name='quantidade_produto' value='<?php echo $produto['quantidade_produto']; ?>' required /></td>
-		</tr>
-		<tr>
-			<td>Descrição do produto:</td>
-			<td><input type='text' name='descricao_produto' value='<?php echo $produto['descricao_produto']; ?>' placeholder='Opcional' /></td>
 		</tr>
 		<tr>
 			<td><button type='submit'>Enviar</button>
