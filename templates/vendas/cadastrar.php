@@ -30,7 +30,6 @@
 
 
 
-
     if ($_GET['action'] == 'pos'):
     	if (count($_POST) > 0){
 			$referencias = trim_post('referencia');

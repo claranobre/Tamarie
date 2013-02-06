@@ -32,12 +32,24 @@
 	}
 
 	function trim_post($campo){
-	$nome = explode(';', $_POST[$campo]);
-	foreach ($nome as $valor) {
-		$valor = trim($valor);
+		$nome = rtrim($_POST[$campo], ';');
+		$nome = explode(';', $nome);
+		foreach ($nome as $chave => $valor) {
+			$valor = trim($valor);
 		}
 	return $nome;
 	}
 
 
 ?>
+<script type="text/javascript">
+
+	function cancelar_venda(){
+		var check = confirm('Deseja cancelar a venda?')
+		if (check){
+			window.location = '/tamarie/index.php/estoque/listar/';
+		}
+	}
+
+
+</script>

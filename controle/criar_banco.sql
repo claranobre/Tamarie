@@ -26,4 +26,4 @@ CREATE TABLE estoque (
 
 INSERT INTO clientes (nome, telefone, endereco, status) values ('Valdet', '3208-6666',  'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '3208-5798', 'Rua Miguel Castro', 'em divida'); 
 
-INSERT INTO estoque (nome_produto, preco_produto, quantidade_produto, referencia) values ('Saia curta', 27.45, 15, 12345),('Saia longa rodada', 55, 3, 54321); 
+INSERT INTO estoque (nome_produto, preco_produto, quantidade_produto, referencia) values ('saia curta', 27.45, 15, 1357),('saia longa rodada', 55, 3, 54321),('legging longa', 19.50, 27, 2468); 

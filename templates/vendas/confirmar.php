@@ -1,7 +1,7 @@
 <br /><br />
 <h2>Confirmar Venda</h2>
 <?php
-
+	
 	$num = 0;
 	$produto = array(array());
 	foreach ($_POST['nome_produto'] as $value) {
@@ -11,7 +11,7 @@
 		$produto[$num]['desconto'] = $_POST['desconto'][$num];
 		$num++;
 	}
-    
+    var_dump($produto);
 ?>
 
 <table class='lista'>
@@ -57,8 +57,13 @@
 		</tr>
 		<tr>
 			<td><button type='submit'>Confirmar Venda</button></td>
-			<td><input type='button' value='Cancelar Venda' onclick='location.aheaf'/></td>
+			<td><input type='button' value='Cancelar Venda' onclick='cancelar_venda()'/></td>
 		</tr>
 	</form>
 </table>
 
+<?php 
+	foreach ($produto as $key => $value) {
+		# code...
+	}
+?>
