@@ -22,11 +22,20 @@ table.lista th {
 }
 
 table.lista td {
+  text-align: center;
   border-width: 1px;
   padding: 8px;
   border-style: solid;
   border-color: #666666;
   background-color: #ffffff;
+}
+
+table.form td {
+  text-align: right;
+}
+
+td.td {
+  float: left;
 }
 
   .form_padrao {width:450px; float:left;}

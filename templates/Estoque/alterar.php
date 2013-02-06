@@ -1,6 +1,6 @@
 <br /><br />
 <h2>Alterar Dados</h2>
-<table>
+<table class='form'>
 	<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id']; ?>' method='post'>
 <?php  
     $produto = buscar_por_id('estoque', $_GET['id']);
@@ -22,7 +22,7 @@
 			<td><input type='text' name='quantidade_produto' value='<?php echo $produto['quantidade_produto']; ?>' required /></td>
 		</tr>
 		<tr>
-			<td><button type='submit'>Enviar</button>
+			<td><button type='submit'>Enviar</button></td>
 		</tr>
 	</form>
 </table>

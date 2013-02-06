@@ -1,6 +1,6 @@
 <br /><br />
 <h2>Cadastrar Cliente</h2>
-<table>
+<table class='form'>
 	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
 		<tr>
 			<td>Nome do cliente:</td>
@@ -28,7 +28,7 @@
 			<td><input type='text' name='data_pagamento' value='00/00/0000' /></td>
 		</tr>
 		<tr>
-			<td><button type='submit'>Enviar</button>
+			<td><button type='submit'>Enviar</button></td>
 		</tr>
 	</form>
 </table>

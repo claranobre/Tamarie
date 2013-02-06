@@ -1,7 +1,7 @@
 <br /><br />
 <h2>Alterar Dados</h2>
 
-<table>
+<table class='form'>
 	<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id'];?>' method='post'>
 <?php
 $cliente = buscar_por_id('clientes',$_GET['id']);
@@ -31,7 +31,7 @@ $cliente = buscar_por_id('clientes',$_GET['id']);
 				<td><input type='text' name='data_pagamento' value='<?php echo converter_data($cliente['data_pagamento']);?>' /></td>
 			</tr>
 			<tr>
-				<td><button type='submit'>Enviar</button>
+				<td><button type='submit'>Enviar</button></td>
 			</tr>
 	</form>
 </table>

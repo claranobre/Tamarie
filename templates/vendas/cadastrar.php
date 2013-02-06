@@ -3,7 +3,7 @@
 <?php  
     if ($_GET['action'] == 'reg'):
 ?>
-<table>
+<table class='form'>
 	<form action='<?php echo $_SERVER['PHP_SELF'].'?action=pos'; ?>' method='post'>
 		<tr>
 			<td>
@@ -13,7 +13,7 @@
 			<td><input type='text' name='referencia' required /></td>
 		</tr>
 		<tr>
-			<td><button type='submit'>Enviar</button>
+			<td><button type='submit'>Enviar</button></td>
 		</tr>
 	</form>
 </table>
@@ -36,13 +36,13 @@
 			$referencias = trim_post('referencia');
     	}
 ?>
-<table>
-	<form action='<?php echo $_SERVER['PHP_SELF'].'?action=con'; ?>' method='post'>
+<table class='form'>
+	<form action='/<?php echo BASE; ?>/index.php/vendas/confirmar/' method='post'>
 		<tr>
-			<td></td>
+			<th></th>
 			<?php  
 			    foreach ($referencias as $key => $value) {
-			    	echo '<td>Produto '.($key+1).'</td>'; 
+			    	echo '<th>Produto '.($key+1).'</th>'; 
 			    }
 			?>
 		</tr>
@@ -99,89 +99,8 @@
 			?>
 		</tr>
 		<tr>
-			<td><button type='submit'>Enviar</button>
+			<td><button type='submit'>Enviar</button></td>
 		</tr>
 	</form>
 </table>
-<?php
-    endif;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if ($_GET['action'] == 'con'):
-    	$num = 0;
-    	$produto = array(array());
-    	foreach ($_POST['nome_produto'] as $value) {
-    		$produto[$num]['nome_produto'] = $_POST['nome_produto'][$num];
-    		$produto[$num]['referencia'] = $_POST['referencia'][$num];
-    		$produto[$num]['quantidade'] = $_POST['quantidade'][$num];
-    		$produto[$num]['desconto'] = $_POST['desconto'][$num];
-    		$num++;
-    	}
-?>
-
-<table class='lista'>
-	<tr>
-		<th>Produto</th>
-		<th>Referencia</th>
-		<th>Quantidade</th>
-		<th>Preço</th>
-	</tr>
-
-<?php 
-	$quantidade = 0; 
-    $soma = 0;
-    foreach ($produto as $value):
-?>
-    	<tr>
-    		<td><?php echo $value['nome_produto']; ?></td>
-    		<td><?php echo $value['referencia']; ?></td>
-    		<td><?php echo $value['quantidade']; ?></td>
-    		<td>
-    			<?php 
-    				$preco = select('preco_produto', 'estoque', 'referencia', $value['referencia']);
-    				settype($value['desconto'], 'int');
-    				$preco['preco_produto'] = $preco['preco_produto']-($preco['preco_produto']/100)*$value['desconto'];
-    				echo 'R$ '.reverter_float($preco['preco_produto']); 
-    			?>
-    		</td>
-    	</tr>
-<?php
-	$soma += $preco['preco_produto'];
-	$quantidade += $value['quantidade'];
-    endforeach;
-?>
-	
-	<tr>
-		<th>Total</th>
-		<th></th>
-		<th><?php echo $quantidade; ?></th>
-		<th><?php echo 'R$ '.reverter_float($soma); ?></th>
-	</tr>
-
-</table>
-
-
-<?php
-
-    endif;
-?>
+<?php endif; ?>
