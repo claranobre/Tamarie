@@ -153,19 +153,21 @@
     foreach ($produto as $value):
 ?>
     	<tr>
-    		<td><?php echo $value[0]; ?></td>
-    		<td><?php echo $value[1]; ?></td>
-    		<td><?php echo $value[2]; ?></td>
+    		<td><?php echo $value['nome_produto']; ?></td>
+    		<td><?php echo $value['referencia']; ?></td>
+    		<td><?php echo $value['quantidade']; ?></td>
     		<td>
     			<?php 
-    				$preco = select('preco_produto', 'estoque', 'referencia', $value[1]);
+    				$preco = select('preco_produto', 'estoque', 'referencia', $value['referencia']);
+    				settype($value['desconto'], 'int');
+    				$preco['preco_produto'] = $preco['preco_produto']-($preco['preco_produto']/100)*$value['desconto'];
     				echo 'R$ '.reverter_float($preco['preco_produto']); 
     			?>
     		</td>
     	</tr>
 <?php
 	$soma += $preco['preco_produto'];
-	$quantidade += $value[2];
+	$quantidade += $value['quantidade'];
     endforeach;
 ?>
 	
