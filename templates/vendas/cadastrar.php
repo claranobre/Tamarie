@@ -20,6 +20,17 @@
 <?php  
     endif;
 
+
+
+
+
+
+
+
+
+
+
+
     if ($_GET['action'] == 'pos'):
     	if (count($_POST) > 0){
 			$referencias = trim_post('referencia');
@@ -95,14 +106,35 @@
 <?php
     endif;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     if ($_GET['action'] == 'con'):
     	$num = 0;
     	$produto = array(array());
     	foreach ($_POST['nome_produto'] as $value) {
-    		$produto[$num][] = $_POST['nome_produto'][$num];
-    		$produto[$num][] = $_POST['referencia'][$num];
-    		$produto[$num][] = $_POST['quantidade'][$num];
-    		$produto[$num][] = $_POST['desconto'][$num];
+    		$produto[$num]['nome_produto'] = $_POST['nome_produto'][$num];
+    		$produto[$num]['referencia'] = $_POST['referencia'][$num];
+    		$produto[$num]['quantidade'] = $_POST['quantidade'][$num];
+    		$produto[$num]['desconto'] = $_POST['desconto'][$num];
     		$num++;
     	}
 ?>
