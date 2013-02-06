@@ -76,8 +76,8 @@
         return mysql_fetch_assoc($resultado);        
     }
 
-    function select($campo, $tabela, $restricao, $id){
-        $sql = 'SELECT '.$campo.' from '.$tabela.' WHERE '.$restricao.' = '.$id.';';
+    function select($campo, $tabela, $restricao, $identificador){
+        $sql = 'SELECT '.$campo.' from '.$tabela.' WHERE '.$restricao.' = '.$identificador.';';
         $query = mysql_query($sql);
         $resultado = mysql_fetch_assoc($query);
         return $resultado;

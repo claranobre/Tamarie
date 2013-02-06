@@ -31,4 +31,13 @@
 		return $dados;
 	}
 
+	function trim_post($campo){
+	$nome = explode(';', $_POST[$campo]);
+	foreach ($nome as $valor) {
+		$valor = trim($valor);
+		}
+	return $nome;
+	}
+
+
 ?>

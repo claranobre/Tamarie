@@ -1,7 +1,7 @@
 <br /><br />
 <h2>Alterar Dados</h2>
 <table>
-	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+	<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id']; ?>' method='post'>
 <?php  
     $produto = buscar_por_id('estoque', $_GET['id']);
 ?>
