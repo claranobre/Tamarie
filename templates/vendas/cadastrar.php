@@ -36,7 +36,7 @@
     	}
 ?>
 <table class='form'>
-	<form action='/<?php echo BASE; ?>/index.php/vendas/confirmar/' method='post'>
+	<form action='/<?php echo BASE; ?>/index.php/vendas/confirmar/?action=cad' method='post'>
 		<tr>
 			<th></th>
 			<?php  

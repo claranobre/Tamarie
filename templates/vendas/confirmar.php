@@ -1,7 +1,8 @@
 <br /><br />
 <h2>Confirmar Venda</h2>
 <?php
-	
+
+if ($_GET['action'] == 'cad'){
 	$num = 0;
 	$produto = array(array());
 	foreach ($_POST['nome_produto'] as $value) {
@@ -11,11 +12,11 @@
 		$produto[$num]['desconto'] = $_POST['desconto'][$num];
 		$num++;
 	}
-    var_dump($produto);
+    // var_dump($produto);
 ?>
 
 <table class='lista'>
-	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+	<form action='<?php echo $_SERVER['PHP_SELF'].'?action=arm'?>' method='post'>
 		<tr>
 			<th>Produto</th>
 			<th>Referencia</th>
@@ -35,6 +36,7 @@
 	    		<td>
 	    			<?php 
 	    				$preco = select('preco_produto', 'estoque', 'referencia', $value['referencia']);
+	    				$preco_inicial = $preco['preco_produto'];
 	    				settype($value['desconto'], 'int');
 	    				$preco['preco_produto'] = $preco['preco_produto']-($preco['preco_produto']/100)*$value['desconto'];
 	    				$preco['preco_produto'] = round($preco['preco_produto'], 2);
@@ -43,6 +45,10 @@
 	    		</td>
 	    	</tr>
 	<?php
+		$value['preco_produto_original'] = $preco_inicial;
+		$value['preco_produto_descontado'] = $preco['preco_produto'];
+		settype($value['quantidade'], 'int');
+		settype($value['preco_produto_original'], 'float');
 		$soma += $preco['preco_produto'];
 		$quantidade += $value['quantidade'];
 	    endforeach;
@@ -63,7 +69,11 @@
 </table>
 
 <?php 
-	foreach ($produto as $key => $value) {
-		# code...
+	} 
+	else if  ($_GET['action'] == 'arm') {
+		// INPUTS HIDDEN!!!!!!!!!!!!!
+		echo 'VAI INSERT';
+		var_dump($_POST);
 	}
 ?>
+
