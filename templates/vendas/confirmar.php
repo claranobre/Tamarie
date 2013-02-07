@@ -53,6 +53,9 @@ if ($_GET['action'] == 'cad'){
 		$quantidade += $value['quantidade'];
 	    endforeach;
 	    $soma *= $quantidade;
+	    var_dump($produto);
+	    echo '<br /><br /><br /><br />';
+	    var_dump($_POST);
 	?>
 		
 		<tr>
@@ -73,7 +76,7 @@ if ($_GET['action'] == 'cad'){
 	else if  ($_GET['action'] == 'arm') {
 		// INPUTS HIDDEN!!!!!!!!!!!!!
 		echo 'VAI INSERT';
-		var_dump($_POST);
+		// var_dump($_POST);
 	}
 ?>
 
