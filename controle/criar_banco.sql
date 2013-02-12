@@ -28,7 +28,7 @@ CREATE TABLE vendas (
 	nome_produto varchar(255) NOT NULL,
 	referencia varchar(255) NOT NULL,
 	quantidade int NOT NULL,
-	desconto int NOT NULL,
+	desconto varchar(255) NOT NULL,
 	preco_produto_original float NOT NULL,
 	preco_produto_descontado float NOT NULL,
 	PRIMARY KEY (id)
