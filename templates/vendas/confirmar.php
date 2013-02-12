@@ -21,6 +21,7 @@
 		</tr>
 
 	<?php 
+		$string = array();
 		$preco_original = array();
 		$preco_descontado = array();
 		$quantidade = 0; 
@@ -43,6 +44,7 @@
 	    		</td>
 	    	</tr>
 	<?php
+		$string[] = '';
 		$preco_original[] = $preco_inicial;
 		$preco_descontado[] = $preco['preco_produto'];
 		$soma += $preco['preco_produto'];
@@ -58,24 +60,19 @@
 			<th><?php echo 'R$ '.reverter_float($soma); ?></th>
 		</tr>
 		<tr>
-			<td>
-				<?php 
-					var_dump($preco_original);
-					// var_dump($produtos);
-					$string = array();
-					foreach ($produtos as $key => $value): 
+			<?php 	
+				foreach ($produtos as $key => $value): 
 					$string[$key] .= 'nome_produto=>'.$value['nome_produto'].';';
 					$string[$key] .= 'referencia=>'.$value['referencia'].';';
 					$string[$key] .= 'quantidade=>'.$value['quantidade'].';';
 					$string[$key] .= 'desconto=>'.$value['desconto'].';';
 					$string[$key] .= 'preco_original=>'.$preco_original[$key].';';
 					$string[$key] .= 'preco_descontado=>'.$preco_descontado[$key];
-				?>
+			?>
 
-				<input type='text' name='nome_produto' value='<?php echo $string[$key]; ?>' required />
+			<input type='text' name='produtos[]' value='<?php echo $string[$key]; ?>' hidden required />
 
-				<?php endforeach; ?>
-			</td>
+			<?php endforeach; ?>
 		</tr>
 		<tr>
 			<td><button type='submit'>Confirmar Venda</button></td>
