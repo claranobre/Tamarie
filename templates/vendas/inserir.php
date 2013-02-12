@@ -1,13 +1,15 @@
 <?php 
-	$produtos = $_POST['produtos'];
+	$produtos_destratados = $_POST['produtos'];
 	$tratamento_produto = array();
-	foreach ($produtos as $key => $value) {
+	$produtos = array(array());
+	foreach ($produtos_destratados as $key => $value) {
 		$tratamento_produto[] = explode(';', $value);
 	}
-	var_dump($tratamento_produto);
-	echo '<br /><br />';
-	foreach ($tratamento_produto as $key => $value) {
-		var_dump($value);
-		echo '<br /><br />';
+	foreach ($tratamento_produto as $chave => $valor) {
+		foreach ($valor as $key => $value) {
+			$tratamento_value = explode('=>', $value);
+			$produtos[$chave][$tratamento_value[0]] = $tratamento_value[1];
+		}
 	}
+	var_dump($produtos);
 ?>
