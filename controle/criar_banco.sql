@@ -30,7 +30,7 @@ CREATE TABLE vendas (
 	quantidade int NOT NULL,
 	desconto int NOT NULL,
 	preco_produto_original float NOT NULL,
-	preco_produto_descontado float NOT NULL
+	preco_produto_descontado float NOT NULL,
 	PRIMARY KEY (id)
 );
 

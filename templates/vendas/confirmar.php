@@ -2,7 +2,7 @@
 <h2>Confirmar Venda</h2>
 <?php
 
-if ($_GET['action'] == 'cad'){
+
 	$num = 0;
 	$produto = array(array());
 	foreach ($_POST['nome_produto'] as $value) {
@@ -16,7 +16,7 @@ if ($_GET['action'] == 'cad'){
 ?>
 
 <table class='lista'>
-	<form action='<?php echo $_SERVER['PHP_SELF'].'?action=arm'?>' method='post'>
+	<form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
 		<tr>
 			<th>Produto</th>
 			<th>Referencia</th>
@@ -70,13 +70,3 @@ if ($_GET['action'] == 'cad'){
 		</tr>
 	</form>
 </table>
-
-<?php 
-	} 
-	else if  ($_GET['action'] == 'arm') {
-		// INPUTS HIDDEN!!!!!!!!!!!!!
-		echo 'VAI INSERT';
-		// var_dump($_POST);
-	}
-?>
-

@@ -80,6 +80,7 @@
         $sql = 'SELECT '.$campo.' from '.$tabela.' WHERE '.$restricao.' = '.$identificador.';';
         $query = mysql_query($sql);
         $resultado = mysql_fetch_assoc($query);
+        // var_dump($resultado);
         return $resultado;
     }
 

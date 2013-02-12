@@ -4,5 +4,5 @@
 <br />
 <a href='/<?php echo BASE; ?>/index.php/clientes/cadastrar/'>Cadastrar Cliente</a> |
 <a href='/<?php echo BASE; ?>/index.php/estoque/cadastrar/'>Cadastrar Estoque</a> |
-<a href='/<?php echo BASE; ?>/index.php/vendas/cadastrar/?action=reg'>Cadastrar Venda</a> 
+<a href='/<?php echo BASE; ?>/index.php/vendas/cadastrar/'>Cadastrar Venda</a> 
 <br />
