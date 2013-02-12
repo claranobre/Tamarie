@@ -17,7 +17,7 @@
 				$nome = select('nome_produto', 'estoque', 'referencia', $value);
 			?>
 			<td>
-				<input type='text' name='nome_produto' value='<?php echo $nome['nome_produto']; ?>' required />
+				<input type='text' name='nome_produto[]' value='<?php echo $nome['nome_produto']; ?>' required />
 			</td>
 			<?php endforeach; ?>
 		</tr>
@@ -25,7 +25,7 @@
 			<td>Referencia:</td>
 			<?php foreach ($referencias as $value): ?>
 			<td>
-				<input type='text' name='referencia' value='<?php echo $value; ?>' required />
+				<input type='text' name='referencia[]' value='<?php echo $value; ?>' required />
 			</td>
 			<?php endforeach; ?>
 		</tr>
@@ -33,7 +33,7 @@
 			<td>Quantidade:</td>
 			<?php foreach ($referencias as $value): ?>
 			<td>
-				<input type='text' name='quantidade' required />
+				<input type='text' name='quantidade[]' required />
 			</td>
 			<?php endforeach; ?>
 		</tr>
@@ -41,7 +41,7 @@
 			<td>Desconto:</td>
 			<?php foreach ($referencias as $value): ?>
 			<td>
-				<input type='text' name='desconto' />
+				<input type='text' name='desconto[]' placeholder='Ex.: 25%' />
 			</td>
 			<?php endforeach; ?>
 		</tr>

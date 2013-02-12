@@ -1,20 +1,16 @@
 <br /><br />
 <h2>Confirmar Venda</h2>
 <?php
-
-
 	$num = 0;
-	$produto = array(array());
+	$produtos = array(array());
 	foreach ($_POST['nome_produto'] as $value) {
-		$produto[$num]['nome_produto'] = $_POST['nome_produto'][$num];
-		$produto[$num]['referencia'] = $_POST['referencia'][$num];
-		$produto[$num]['quantidade'] = $_POST['quantidade'][$num];
-		$produto[$num]['desconto'] = $_POST['desconto'][$num];
+		$produtos[$num]['nome_produto'] = $_POST['nome_produto'][$num];
+		$produtos[$num]['referencia'] = $_POST['referencia'][$num];
+		$produtos[$num]['quantidade'] = $_POST['quantidade'][$num];
+		$produtos[$num]['desconto'] = $_POST['desconto'][$num];
 		$num++;
 	}
-    // var_dump($produto);
 ?>
-
 <table class='lista'>
 	<form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
 		<tr>
@@ -25,9 +21,11 @@
 		</tr>
 
 	<?php 
+		$preco_original = array();
+		$preco_descontado = array();
 		$quantidade = 0; 
 	    $soma = 0;
-	    foreach ($produto as $value):
+	    foreach ($produtos as $value):
 	?>
 	    	<tr>
 	    		<td><?php echo $value['nome_produto']; ?></td>
@@ -45,17 +43,12 @@
 	    		</td>
 	    	</tr>
 	<?php
-		$value['preco_produto_original'] = $preco_inicial;
-		$value['preco_produto_descontado'] = $preco['preco_produto'];
-		settype($value['quantidade'], 'int');
-		settype($value['preco_produto_original'], 'float');
+		$preco_original[] = $preco_inicial;
+		$preco_descontado[] = $preco['preco_produto'];
 		$soma += $preco['preco_produto'];
 		$quantidade += $value['quantidade'];
 	    endforeach;
 	    $soma *= $quantidade;
-	    var_dump($produto);
-	    echo '<br /><br /><br /><br />';
-	    var_dump($_POST);
 	?>
 		
 		<tr>
@@ -63,6 +56,26 @@
 			<th></th>
 			<th><?php echo $quantidade; ?></th>
 			<th><?php echo 'R$ '.reverter_float($soma); ?></th>
+		</tr>
+		<tr>
+			<td>
+				<?php 
+					var_dump($preco_original);
+					// var_dump($produtos);
+					$string = array();
+					foreach ($produtos as $key => $value): 
+					$string[$key] .= 'nome_produto=>'.$value['nome_produto'].';';
+					$string[$key] .= 'referencia=>'.$value['referencia'].';';
+					$string[$key] .= 'quantidade=>'.$value['quantidade'].';';
+					$string[$key] .= 'desconto=>'.$value['desconto'].';';
+					$string[$key] .= 'preco_original=>'.$preco_original[$key].';';
+					$string[$key] .= 'preco_descontado=>'.$preco_descontado[$key];
+				?>
+
+				<input type='text' name='nome_produto' value='<?php echo $string[$key]; ?>' required />
+
+				<?php endforeach; ?>
+			</td>
 		</tr>
 		<tr>
 			<td><button type='submit'>Confirmar Venda</button></td>
