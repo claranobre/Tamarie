@@ -22,41 +22,41 @@
 
 	<?php 
 		$string = array();
-		$preco_original = array();
-		$preco_descontado = array();
-		$quantidade = 0; 
+		$preco_unidade = array();
+		$preco_total = array();
+		$quantidade = array(); 
+		$quantidade_total = 0;
 	    $soma = 0;
-	    foreach ($produtos as $value):
+	    foreach ($produtos as $key => $value):
+	    	$string[] = '';
+
+	    	$preco = select('preco_produto', 'estoque', 'referencia', $value['referencia']);
+			settype($value['desconto'], 'int');
+			$preco['preco_produto'] = $preco['preco_produto']-($preco['preco_produto']/100)*$value['desconto'];
+			$preco['preco_produto'] = round($preco['preco_produto'], 2);
+	    	$preco_unidade[] = $preco['preco_produto'];
+
+	    	$quantidade[$key] = $value['quantidade'];
+	    	$quantidade_total += $quantidade[$key];
+
+	    	$preco_total[] = ($quantidade[$key]*$preco['preco_produto']);			
+			
+			$soma += ($preco_total[$key]);
 	?>
 	    	<tr>
 	    		<td><?php echo $value['nome_produto']; ?></td>
 	    		<td><?php echo $value['referencia']; ?></td>
 	    		<td><?php echo $value['quantidade']; ?></td>
-	    		<td>
-	    			<?php 
-	    				$preco = select('preco_produto', 'estoque', 'referencia', $value['referencia']);
-	    				$preco_inicial = $preco['preco_produto'];
-	    				settype($value['desconto'], 'int');
-	    				$preco['preco_produto'] = $preco['preco_produto']-($preco['preco_produto']/100)*$value['desconto'];
-	    				$preco['preco_produto'] = round($preco['preco_produto'], 2);
-	    				echo 'R$ '.reverter_float($preco['preco_produto']); 
-	    			?>
-	    		</td>
+	    		<td><?php echo 'R$ '.reverter_float($preco['preco_produto']); ?></td>
 	    	</tr>
 	<?php
-		$string[] = '';
-		$preco_original[] = $preco_inicial;
-		$preco_descontado[] = $preco['preco_produto'];
-		$soma += $preco['preco_produto'];
-		$quantidade += $value['quantidade'];
 	    endforeach;
-	    $soma *= $quantidade;
 	?>
 		
 		<tr>
 			<th>Total</th>
 			<th></th>
-			<th><?php echo $quantidade; ?></th>
+			<th><?php echo $quantidade_total; ?></th>
 			<th><?php echo 'R$ '.reverter_float($soma); ?></th>
 		</tr>
 		<tr>
@@ -66,8 +66,8 @@
 					$string[$key] .= 'referencia=>'.$value['referencia'].';';
 					$string[$key] .= 'quantidade=>'.$value['quantidade'].';';
 					$string[$key] .= 'desconto=>'.$value['desconto'].';';
-					$string[$key] .= 'preco_original=>'.$preco_original[$key].';';
-					$string[$key] .= 'preco_descontado=>'.$preco_descontado[$key];
+					$string[$key] .= 'preco_unidade=>'.$preco_unidade[$key].';';
+					$string[$key] .= 'preco_total=>'.$preco_total[$key];
 			?>
 
 			<input type='text' name='produtos[]' value='<?php echo $string[$key]; ?>' hidden required />
