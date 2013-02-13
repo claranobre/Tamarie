@@ -50,6 +50,5 @@
 			window.location = '/tamarie/index.php/estoque/listar/';
 		}
 	}
-
-
+	
 </script>

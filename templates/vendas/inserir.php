@@ -11,5 +11,27 @@
 			$produtos[$chave][$tratamento_value[0]] = $tratamento_value[1];
 		}
 	}
-	var_dump($produtos);
+	foreach ($produtos as $key => $value) {
+		settype($produtos[$key]['quantidade'], 'int');
+		settype($produtos[$key]['preco_original'], 'float');
+		settype($produtos[$key]['preco_descontado'], 'float');
+		if ($produtos[$key]['desconto'] == '') {
+			$produtos[$key]['desconto'] = '0%';
+		}
+		else {
+			$desconto = explode('%', $produtos[$key]['desconto']);
+			$produtos[$key]['desconto'] = $desconto[0].'%';
+		}
+	}
+	foreach ($produtos as $key => $value) {
+		insert($value, 'vendas');
+		$quantidade = select('quantidade_produto', 'estoque', 'referencia', $produtos[$key]['referencia']);
+		$quantidade = $quantidade['quantidade_produto'];
+		settype($quantidade, 'int');
+		$restante = array();
+		$restante['quantidade_produto'] = ($quantidade-$produtos[$key]['quantidade']);
+		update($restante, 'referencia', $produtos[$key]['referencia'], 'estoque');
+	}
+	ob_clean();
+	header('LOCATION: /'.BASE.'/index.php/vendas/listar/');
 ?>

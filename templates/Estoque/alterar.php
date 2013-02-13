@@ -30,7 +30,7 @@
 <?php 
 	if (count($_POST) > 0){
 		$_POST['preco_produto'] = converter_float($_POST['preco_produto']);
-		update($_POST, $_GET['id'], 'estoque');
+		update($_POST, 'id', $_GET['id'], 'estoque');
 		ob_clean();
 		header('LOCATION: /'.BASE.'/index.php/estoque/listar/');
 	}

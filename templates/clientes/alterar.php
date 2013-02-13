@@ -47,7 +47,7 @@ $cliente = buscar_por_id('clientes',$_GET['id']);
 		else{
 			$_POST['status'] = 'quite';
 		}
-		update($_POST, $_GET['id'], 'clientes');
+		update($_POST, 'id', $_GET['id'], 'clientes');
 		ob_clean();
 		header('LOCATION: /'.BASE.'/index.php/clientes/listar/');
 	}
