@@ -5,14 +5,14 @@ CREATE TABLE clientes (
 	id int NOT NULL auto_increment,
 	nome varchar(255) NOT NULL,
 	telefone varchar(255) NOT NULL,
-	cnpj_cpf varchar(255) NULL,
+	cpf varchar(255) NULL,
 	endereco varchar(255) NOT NULL,
 	divida int NULL,
 	data_pagamento date NULL,
 	status varchar(255) NULL,
 	PRIMARY KEY (id),
 	UNIQUE (nome),
-	UNIQUE (cnpj_cpf)
+	UNIQUE (cpf)
 );
 CREATE TABLE estoque (
 	id int NOT NULL auto_increment,
@@ -34,6 +34,6 @@ CREATE TABLE vendas (
 	PRIMARY KEY (id)
 );
 
-INSERT INTO clientes (nome, telefone, endereco, status) values ('Valdet', '3208-6666',  'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '3208-5798', 'Rua Miguel Castro', 'em divida'); 
+INSERT INTO clientes (nome, telefone, endereco, status) values ('Valdet', '(84) 3208-6666',  'Rua Miguel Castro', 'quite'),('Karol Reinaldo', '(84) 3208-5798', 'Rua Miguel Castro', 'em divida'); 
 
 INSERT INTO estoque (nome_produto, preco_produto, quantidade_produto, referencia) values ('saia curta', 27.45, 15, '1357'),('saia longa rodada', 55, 3, '54321'),('legging longa', 19.50, 27, '2468'); 

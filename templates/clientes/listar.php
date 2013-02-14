@@ -6,7 +6,7 @@
 	<tr>
 		<th>Nome</th>
 		<th>Telefone</th>
-		<th>Cnpj / Cpf</th>
+		<th>Cpf</th>
 		<th>Endereço</th>
 		<th>Divida</th>
 		<th>Data de Pagamento</th>	
@@ -25,11 +25,11 @@
 		<td><?php echo $cliente['telefone']?></td>
 		<td>
 			<?php
-				if ($cliente['cnpj_cpf'] == ''){
-					echo 'Cnpj / Cpf nao informado';
+				if ($cliente['cpf'] == ''){
+					echo 'Cpf nao informado';
 				}
 				else{
-				echo $cliente['cnpj_cpf'];
+				echo $cliente['cpf'];
 				}
 			?>
 		</td>
