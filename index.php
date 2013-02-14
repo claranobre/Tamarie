@@ -9,7 +9,7 @@
         <title>Tamarie</title>
     </head>
     <body>
-        <?php
+        <?php  
             include_once(TEMPLATES.'/geral/menu.php'); //adicionando menu
         	mostrar_conteudo(); //mostrar o template incluído
         ?>

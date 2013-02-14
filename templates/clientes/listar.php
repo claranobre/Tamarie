@@ -9,16 +9,16 @@
 		<th>Cnpj / Cpf</th>
 		<th>Endereço</th>
 		<th>Divida</th>
-		<th>Data de Pagamento</th>
-		
+		<th>Data de Pagamento</th>	
 	</tr>
 
 <?php 
 	$clientes = select_all('clientes');
 	foreach ($clientes as $cliente):
 		if ($cliente['divida'] == 0){
-			$cliente['status'] = 'quite';
+			$cliente['status'] = 'quite'; 
 		}
+		
 ?>
 	<tr>
 		<td><?php echo $cliente['nome']?></td>
