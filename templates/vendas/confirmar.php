@@ -3,8 +3,9 @@
 <?php
 	$num = 0;
 	$produtos = array(array());
-	foreach ($_POST['nome_produto'] as $value) {
-		$produtos[$num]['nome_produto'] = $_POST['nome_produto'][$num];
+	foreach ($_POST['referencia'] as $value) {
+		$nome_produto[] = select('nome_produto', 'estoque', 'referencia', $value);
+		$produtos[$num]['nome_produto'] = $nome_produto[$num]['nome_produto'];
 		$produtos[$num]['referencia'] = $_POST['referencia'][$num];
 		$produtos[$num]['quantidade'] = $_POST['quantidade'][$num];
 		$produtos[$num]['desconto'] = $_POST['desconto'][$num];

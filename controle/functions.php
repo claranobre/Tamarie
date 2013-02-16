@@ -44,6 +44,13 @@
 ?>
 <script type="text/javascript">
 
+	function add_produto(){
+		var tb = document.getElementById('tabela');
+		var tr = document.createElement("tr");
+    	tr.innerHTML = "</td><td><input type='text' name='referencia[]' required /></td><td><input type='text' name='quantidade[]' required /></td><td><input type='text' name='desconto[]' placeholder='Ex.: 25%' /></td>";
+    	tb.appendChild(tr);
+	}
+
 	function cancelar_venda(){
 		var check = confirm('Deseja cancelar a venda?')
 		if (check){

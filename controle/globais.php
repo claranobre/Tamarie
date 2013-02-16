@@ -9,8 +9,8 @@
 	define('DB_NAME', 'tamarie');
 	define('DB_USER', 'root');
 	define('DB_PASS', '');
-	define('DB_HOST', 'localhost'); //Windows
-	//define('DB_HOST', 'localhost:/tmp/mysql.sock'); //Unix/OSX
+	// define('DB_HOST', 'localhost'); //Windows
+	define('DB_HOST', 'localhost:/tmp/mysql.sock'); //Unix/OSX
 	ob_start(); //Criando Buffer
 	date_default_timezone_set('America/Recife');
 	include_once('banco.php');

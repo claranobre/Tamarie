@@ -11,8 +11,12 @@
 	</tr>
 
 <?php 
+	$quantidade_total = 0;
+	$soma_preco = 0;
 	$estoque = select_all('estoque');
 	foreach ($estoque as $produto):
+		$quantidade_total += $produto['quantidade_produto'];
+		$soma_preco += $quantidade_total*$produto['preco_produto'];
 ?>
 	<tr>
 		<td><?php echo $produto['nome_produto']; ?></td>
@@ -26,5 +30,9 @@
 <?php  
     endforeach;
 ?>
+	<th>Total:</th>
+	<th></th>
+	<th><?php echo $quantidade_total.' unidades'; ?></th>
+	<th><?php echo 'R$ '.reverter_float($soma_preco); ?></th>
 </table>
 
