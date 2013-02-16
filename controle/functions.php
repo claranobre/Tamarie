@@ -44,10 +44,16 @@
 ?>
 <script type="text/javascript">
 
+	function del_produto(link){
+		td = link.parentNode;
+		tr = td.parentNode;
+		tr.remove();
+	}
+
 	function add_produto(){
 		var tb = document.getElementById('tabela');
 		var tr = document.createElement("tr");
-    	tr.innerHTML = "</td><td><input type='text' name='referencia[]' required /></td><td><input type='text' name='quantidade[]' required /></td><td><input type='text' name='desconto[]' placeholder='Ex.: 25%' /></td>";
+    	tr.innerHTML = "</td><td><input type='text' name='referencia[]' required /></td><td><input type='text' name='quantidade[]' required /></td><td><input type='text' name='desconto[]' placeholder='Ex.: 25%' /></td><td><a href='#' onClick='del_produto(this)'>remover</a></td>";
     	tb.appendChild(tr);
 	}
 
