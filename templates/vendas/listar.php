@@ -4,6 +4,7 @@
 
 <table class='lista'>
 	<tr>
+		<th>Atendente</th>
 		<th>Produto</th>
 		<th>Referencia</th>
 		<th>Quantidade</th>
@@ -20,6 +21,7 @@
 		$preco_total_vendas += ($produto['preco_total']);
 ?>
 	<tr>
+		<td><?php echo $produto['atendente']; ?></td>
 		<td><?php echo $produto['nome_produto']; ?></td>
 		<td><?php echo $produto['referencia']; ?></td>
 		<td><?php echo $produto['quantidade']; if($produto['quantidade'] == 1){ echo ' unidade';} else {echo ' unidades';} ?></td>
@@ -33,6 +35,7 @@
 ?>
 	<tr>
 		<th>Total:</th>
+		<th></th>
 		<th></th>
 		<th><?php echo $quantidade; if($quantidade == 1){ echo ' unidade';} else {echo ' unidades';} ?></th>
 		<th></th>

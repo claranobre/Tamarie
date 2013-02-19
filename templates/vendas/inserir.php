@@ -25,6 +25,7 @@
 			}
 		}
 		foreach ($produtos as $key => $value) {
+			$value['atendente'] = $_SESSION['login'];
 			insert($value, 'vendas');
 			$quantidade = select('quantidade_produto', 'estoque', 'referencia', $produtos[$key]['referencia']);
 			$quantidade = $quantidade['quantidade_produto'];

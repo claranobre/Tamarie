@@ -6,3 +6,4 @@
 <a href='/<?php echo BASE; ?>/index.php/estoque/cadastrar/'>Cadastrar Estoque</a> |
 <a href='/<?php echo BASE; ?>/index.php/vendas/cadastrar/'>Cadastrar Venda</a> 
 <br />
+User: <?php echo $_SESSION['login'].' '?>(<a href='<?php echo '/'.BASE.'/logout.php/'; ?>'>SAIR</a>)
