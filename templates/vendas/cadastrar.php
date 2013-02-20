@@ -11,7 +11,7 @@
 		</thead>
 		<tbody id='tabela'>
 			<tr>
-				<td><input type='text' name='referencia[]' value='<?php echo $value; ?>' required /></td>
+				<td><input type='text' name='referencia[]' required /></td>
 				<td><input type='text' name='quantidade[]' required /></td>
 				<td><input type='text' name='desconto[]' placeholder='Ex.: 25%' /></td>
 			</tr>
