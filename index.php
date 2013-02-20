@@ -11,8 +11,7 @@
     <body>
         <?php  
             if (!isset($_SESSION['login'])){
-                session_start();
-                // header('LOCATION:/'.BASE.'/login.php');
+                header('LOCATION:/'.BASE.'/login.php');
             }
             include_once(TEMPLATES.'/geral/menu.php'); //adicionando menu
         	mostrar_conteudo(); //mostrar o template incluído
