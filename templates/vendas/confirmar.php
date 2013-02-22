@@ -1,25 +1,43 @@
 <br /><br />
 <h2>Confirmar Venda</h2>
 
+<form action='/<?php echo BASE; ?>/index.php/vendas/cadastrar/' method='post'>
+	<?php
+		$referencia = array();
+		foreach ($_POST['referencia'] as $key => $value):
+			$quant_estoque = select('quantidade_produto', 'estoque', 'referencia',  $value);
+			$referencia[$value] = $quant_estoque['quantidade_produto'];
+			if ($_POST['quantidade'][$key] > $referencia[$value]):
+				$entrou_if = 1;
+	?>
+
+			<input type='text' name='referencia[]' value ='<?php echo $value; ?>' hidden/>
+			<input type='text' name='quantidade[]' value='<?php  echo $referencia[$value]; ?>' hidden />
+
+	<?php
+			endif;
+		endforeach;
+		if (isset($entrou_if)):
+	?>
+
+	<button type='submit'>Enviar</button>
+	<?php endif; ?>
+</form>
 
 <?php
-	var_dump($_POST);
-	echo '<br /><br /><br />';
-	$referencia = $_POST['referencia'][0];
-	$qant_estoque = select('quantidade_produto', 'estoque', 'referencia', $referencia);
-	var_dump($qant_estoque);
-	// $num = 0;
-	// $produtos = array(array());
-	// foreach ($_POST['referencia'] as $value) {
-	// 	$nome_produto[] = select('nome_produto', 'estoque', 'referencia', $value);
-	// 	$produtos[$num]['nome_produto'] = $nome_produto[$num]['nome_produto'];
-	// 	$produtos[$num]['referencia'] = $_POST['referencia'][$num];
-	// 	$produtos[$num]['quantidade'] = $_POST['quantidade'][$num];
-	// 	$produtos[$num]['desconto'] = $_POST['desconto'][$num];
-	// 	$num++;
-	// }
+	if (!isset($entrou_if)):
+	$num = 0;
+	$produtos = array(array());
+	foreach ($_POST['referencia'] as $value) {
+		$nome_produto[] = select('nome_produto', 'estoque', 'referencia', $value);
+		$produtos[$num]['nome_produto'] = $nome_produto[$num]['nome_produto'];
+		$produtos[$num]['referencia'] = $_POST['referencia'][$num];
+		$produtos[$num]['quantidade'] = $_POST['quantidade'][$num];
+		$produtos[$num]['desconto'] = $_POST['desconto'][$num];
+		$num++;
+	}
 ?>
-<!-- <form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
+<form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
 	<table class='lista'>
 		<tr>
 			<th>Produto</th>
@@ -87,4 +105,5 @@
 			<td><input type='button' value='Cancelar Venda' onclick='cancelar_venda()'/></td>
 		</tr>
 	</table>
-</form> -->
+</form>
+<?php endif; ?>
