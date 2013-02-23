@@ -23,7 +23,7 @@
 <br /><br />
 <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post'>
 	<table>
-		<?php include_once(TEMPLATES.'/vendas/topo_cadastro.html'); ?>
+		<?php include_once(TEMPLATES.'/vendas/includes/topo_cadastro.html'); ?>
 		<tbody id='tabela'>
 			<?php foreach ($_POST['referencia'] as $key => $value): ?>
 

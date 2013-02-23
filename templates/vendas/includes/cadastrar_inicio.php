@@ -1,6 +1,6 @@
 <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post'>
 	<table>
-		<?php include_once(TEMPLATES.'/vendas/topo_cadastro.html'); ?>
+		<?php include_once(TEMPLATES.'/vendas/includes/topo_cadastro.html'); ?>
 		<tbody id='tabela'>
 			<tr>
 				<td><input type='text' name='referencia[]' required /></td>
