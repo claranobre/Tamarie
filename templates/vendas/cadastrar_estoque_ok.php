@@ -1,31 +1,4 @@
-<br /><br />
-<h2>Confirmar Venda</h2>
-
-<form action='/<?php echo BASE; ?>/index.php/vendas/cadastrar/' method='post'>
-	<?php
-		$referencia = array();
-		foreach ($_POST['referencia'] as $key => $value):
-			$quant_estoque = select('quantidade_produto', 'estoque', 'referencia',  $value);
-			$referencia[$value] = $quant_estoque['quantidade_produto'];
-			if ($_POST['quantidade'][$key] > $referencia[$value]):
-				$entrou_if = 1;
-	?>
-
-			<input type='text' name='referencia[]' value ='<?php echo $value; ?>' hidden/>
-			<input type='text' name='quantidade[]' value='<?php  echo $referencia[$value]; ?>' hidden />
-
-	<?php
-			endif;
-		endforeach;
-		if (isset($entrou_if)):
-	?>
-
-	<button type='submit'>Enviar</button>
-	<?php endif; ?>
-</form>
-
 <?php
-	if (!isset($entrou_if)):
 	$num = 0;
 	$produtos = array(array());
 	foreach ($_POST['referencia'] as $value) {
@@ -46,7 +19,7 @@
 			<th>Preço</th>
 		</tr>
 
-	<?php 
+<?php 
 		$string = array();
 		$preco_unidade = array();
 		$preco_total = array();
@@ -68,16 +41,16 @@
 	    	$preco_total[] = ($quantidade[$key]*$preco['preco_produto']);			
 			
 			$soma += ($preco_total[$key]);
-	?>
+?>
 	    	<tr>
 	    		<td><?php echo $value['nome_produto']; ?></td>
 	    		<td><?php echo $value['referencia']; ?></td>
 	    		<td><?php echo $value['quantidade']; ?></td>
 	    		<td><?php echo 'R$ '.reverter_float($preco['preco_produto']); ?></td>
 	    	</tr>
-	<?php
-	    endforeach;
-	?>
+<?php
+	    	endforeach;
+?>
 		
 		<tr>
 			<th>Total</th>
@@ -106,4 +79,3 @@
 		</tr>
 	</table>
 </form>
-<?php endif; ?>

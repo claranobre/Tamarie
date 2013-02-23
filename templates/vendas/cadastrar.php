@@ -1,23 +1,23 @@
 <br /><br />
 <h2>Cadastrar Venda</h2>
 
-<?php var_dump($_POST); ?>
-<form action='/<?php echo BASE; ?>/index.php/vendas/confirmar/' method='post'>
-	<table>
-		<thead>
-			<tr>
-				<th>Referencia</th>
-				<th>Quantidade</th>
-				<th>Desconto</th>
-			</tr>
-		</thead>
-		<tbody id='tabela'>
-			<tr>
-				<td><input type='text' name='referencia[]' required /></td>
-				<td><input type='text' name='quantidade[]' required /></td>
-				<td><input type='text' name='desconto[]' placeholder='Ex.: 25%' /></td>
-			</tr>
-		</tbody>
-	</table>
-	<button type='submit'>Enviar</button><a href='#' onClick='add_produto()'>Adicionar mais produto</a></td>
-</form>
+<?php 
+
+	include_once(TEMPLATES.'/vendas/vendas_verificar_estoque.php');
+	if (count($_POST) == 0){
+		include_once(TEMPLATES.'/vendas/cadastrar_inicio.php');
+	}
+	if (count($_POST) > 0){
+		$produtos_invalidos = verificar_estoque($_POST);
+		if (count($produtos_invalidos) > 0) {
+			$estoque_insuficiente = 1;
+		}
+		if (isset($estoque_insuficiente)){
+			include_once(TEMPLATES.'/vendas/cadastrar_estoque_insuficiente.php');
+		}
+		else{
+			include_once(TEMPLATES.'/vendas/cadastrar_estoque_ok.php');
+ 		}
+ 	} 
+
+?>
