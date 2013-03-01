@@ -2,7 +2,7 @@
 <h2>Vendas</h2>
 
 
-<table class='lista'>
+<table class='table table-bordered'>
 	<tr>
 		<th>Data de Venda</th>
 		<th>Atendente</th>

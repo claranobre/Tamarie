@@ -24,7 +24,7 @@
 			     	<li><a href='/<?php echo BASE; ?>/index.php/vendas/relatorio/'>Relatorio de Vendas</a></li>
     			</ul>
   			</li>
-            <li><a href='<?php echo '/'.BASE.'/logout.php/'; ?>'>LogOut</a></li>
+            <li><a href='<?php echo '/'.BASE.'/logout.php/'; ?>'>Logout</a></li>
         </ul>
 	</div>
 </div>

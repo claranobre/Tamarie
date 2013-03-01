@@ -10,5 +10,5 @@
 		</tbody>
 	</table>
 	<button class="btn"  type='submit'>Enviar</button>
-	<a href='#' onClick='add_produto()'>Adicionar mais produto</a></td>
+	<a class='btn btn-link' href='#' onClick='add_produto()'>Adicionar mais produto</a></td>
 </form>

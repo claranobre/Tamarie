@@ -11,7 +11,7 @@
 	}
 ?>
 <form class="navbar-form pull-left" action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
-	<table class='lista'>
+	<table class='table table-bordered'>
 		<tr>
 			<th>Produto</th>
 			<th>Referencia</th>
@@ -69,13 +69,11 @@
 					$string[$key] .= 'preco_total=>'.$preco_total[$key];
 			?>
 
-			<input class='span2' type='text' name='produtos[]' value='<?php echo $string[$key]; ?>' hidden required />
+			<input class='invisible' type='text' name='produtos[]' value='<?php echo $string[$key]; ?>' required />
 
 			<?php endforeach; ?>
 		</tr>
-		<tr>
-			<td><button class="btn"  type='submit'>Confirmar Venda</button></td>
-			<td><input class='span2' type='button' value='Cancelar Venda' onclick='cancelar_venda()'/></td>
-		</tr>
 	</table>
+	<button class='btn btn-success'  type='submit'>Confirmar Venda</button>
+	<button class='btn btn-link' onclick='cancelar_venda()'>Cancelar Venda</button>
 </form>

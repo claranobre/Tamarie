@@ -17,7 +17,7 @@
 </form>
 
 <?php if (count($_POST) > 0): ?>
-<table class='lista'>
+<table class='table table-bordered'>
 	<tr>
 		<th>Data de Venda</th>
 		<th>Atendente</th>

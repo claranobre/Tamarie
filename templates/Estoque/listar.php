@@ -2,12 +2,14 @@
 <h2>Estoque</h2>
 
 
-<table class='lista'>
+<table class='table table-bordered'>
 	<tr>
 		<th>Produto</th>
 		<th>Referencia</th>
 		<th>Quantidade</th>
 		<th>Preço</th>
+		<th>Alterar</th>
+		<th>Remover</th>
 	</tr>
 
 <?php 
@@ -23,8 +25,8 @@
 		<td><?php echo $produto['referencia']; ?></td>
 		<td><?php echo $produto['quantidade_produto'].' unidades'; ?></td>
 		<td><?php echo 'R$ '.reverter_float($produto['preco_produto']); ?></td>
-		<td><a href='/<?php echo BASE; ?>/index.php/estoque/alterar/?id=<?php echo $produto['id']; ?>'>Alterar</a></td>
-		<td><a href='/<?php echo BASE; ?>/index.php/estoque/remover/?id=<?php echo $produto['id']; ?>'>Remover</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/estoque/alterar/?id=<?php echo $produto['id']; ?>'>Alterar</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/estoque/remover/?id=<?php echo $produto['id']; ?>'>Remover</a></td>
 	</tr>
 
 <?php  
@@ -34,5 +36,7 @@
 	<th></th>
 	<th><?php echo $quantidade_total.' unidades'; ?></th>
 	<th><?php echo 'R$ '.reverter_float($soma_preco); ?></th>
+	<th></th>
+	<th></th>
 </table>
 

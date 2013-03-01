@@ -9,7 +9,7 @@ function del_produto(link){
 function add_produto(){
 	var tb = document.getElementById('tabela');
 	var tr = document.createElement("tr");
-	tr.innerHTML = "</td><td><input class='span2' type='text' name='referencia[]' required /></td><td><input class='span2' type='text' name='quantidade[]' required /></td><td><input class='span2' type='text' name='desconto[]' placeholder='Ex.: 25%' /></td><td><a href='#' onClick='del_produto(this)'>remover</a></td>";
+	tr.innerHTML = "</td><td><input class='span2' type='text' name='referencia[]' required /></td><td><input class='span2' type='text' name='quantidade[]' required /></td><td><input class='span2' type='text' name='desconto[]' placeholder='Ex.: 25%' /></td><td><a class='btn btn-link' href='#' onClick='del_produto(this)'>remover</a></td>";
 	tb.appendChild(tr);
 }
 

@@ -2,7 +2,7 @@
 <h2>Clientes</h2>
 
 
-<table class='lista'>
+<table class='table table-bordered'>
 	<tr>
 		<th>Nome</th>
 		<th>Telefone</th>
@@ -10,6 +10,8 @@
 		<th>Endereço</th>
 		<th>Divida</th>
 		<th>Data de Pagamento</th>	
+		<th>Alterar</th>
+		<th>Remover</th>
 	</tr>
 
 <?php 
@@ -57,15 +59,15 @@
 		<?php 
 		    if ($cliente['status'] == 'quite'):
 		?>
-		<td><a href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
-		<td><a href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
 		<?php  
 		    endif;
 		    if ($cliente['status'] == 'em divida'):
 		?>
-		<td><a href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
-		<td><a href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
-		<td><a href='/<?php echo BASE; ?>/index.php/clientes/pagar_divida/?id=<?php echo $cliente['id']; ?>'>Pagar Divida</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/clientes/alterar/?id=<?php echo $cliente['id']; ?>'>Alterar</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/clientes/remover/?id=<?php echo $cliente['id']; ?>'>Remover</a></td>
+		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/clientes/pagar_divida/?id=<?php echo $cliente['id']; ?>'>Pagar Divida</a></td>
 		<?php  
 		    endif;
 		?>

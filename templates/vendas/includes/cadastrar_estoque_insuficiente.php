@@ -1,6 +1,6 @@
 <br />
 	<p>Produtos sem estoque suficiente:</p>
-	<table class='lista'>
+	<table class='table table-bordered'>
 		<thead>
 			<tr>
 				<th>Produto</th>
@@ -37,5 +37,5 @@
 		</tbody>
 	</table>
 	<button class="btn"  type='submit'>Enviar</button>
-	<a href='#' onClick='add_produto()'>Adicionar mais produto</a></td>
+	<a class='btn' href='#' onClick='add_produto()'>Adicionar mais produto</a></td>
 </form>
