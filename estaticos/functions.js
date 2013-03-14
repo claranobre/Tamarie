@@ -14,6 +14,13 @@ function pagar_cliente_sem_divida(){
 	alert('Esse cliente não possui dívidas');
 }
 
+function logout(){
+	var check = confirm('Deseja mesmo deslogar do sistema Tamarie?')
+	if (check){
+		window.location = '/tamarie/logout.php';
+	}
+}
+
 function add_produto(){
 	var tb = document.getElementById('tabela');
 	var tr = document.createElement("tr");
