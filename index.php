@@ -5,8 +5,8 @@
 <html>
     <head>
     	<meta charset="UTF-8">
-<!--     	<link rel="stylesheet" type="text/css" href="/<?php echo BASE?>/estaticos/estilo.css">
- -->        <link rel="stylesheet" type="text/css" href="/<?php echo BASE?>/estaticos/bootstrap/css/bootstrap.css">
+            <!--<link rel="stylesheet" type="text/css" href="/<?php echo BASE?>/estaticos/estilo.css">-->
+            <link rel="stylesheet" type="text/css" href="/<?php echo BASE?>/estaticos/bootstrap/css/bootstrap.css">
             <link rel="stylesheet" type="text/css" href="/<?php echo BASE?>/estaticos/datepicker/css/datepicker.css">
         <title>Tamarie</title>
     </head>

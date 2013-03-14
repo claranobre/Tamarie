@@ -86,6 +86,8 @@
     }
 
     function buscar_relatorio_vendas($data_inicial, $data_limite){
+        $data_inicial = reverter_data($data_inicial);
+        $data_limite = reverter_data($data_limite);
         $where = 'where data_venda > \''.$data_inicial.'\' and data_venda < \''.$data_limite.'\'';
         return select_all('vendas', $where);
     }

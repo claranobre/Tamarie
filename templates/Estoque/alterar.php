@@ -1,5 +1,5 @@
-<br /><br />
-<h2>Alterar Dados</h2>
+<table><tr><td style='height: 60px;'></td></tr><tr><td style='height: 100px; width: 479px;'></td><td><h2>Alterar Dados</h2></td></tr></table>
+
 
 <form class="navbar-form pull-left" action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id']; ?>' method='post'>
 	<table class='form'>
@@ -8,23 +8,28 @@
     $produto = buscar_por_id('estoque', $_GET['id']);
 ?>
 		<tr>
-			<td>Nome do produto:</td>
+			<td style='width: 420px;'></td>
+			<td style='text-align: right;'>Nome do produto</td>
 			<td><input class='span2' type='text' name='nome_produto' value='<?php echo $produto['nome_produto']; ?>' required /></td>
 		</tr>
 		<tr>
-			<td>Referencia do produto:</td>
+			<td></td>
+			<td style='text-align: right;'>Referencia do produto</td>
 			<td><input class='span2' type='text' name='referencia' value='<?php echo $produto['referencia']; ?>' required /></td>
 		</tr>
 		<tr>
-			<td>Preço do produto (em R$):</td>
+			<td></td>
+			<td style='text-align: right;'>Preço do produto (em R$)</td>
 			<td><input class='span2' type='text' name='preco_produto' value='<?php echo reverter_float($produto['preco_produto']); ?>' required /></td>
 		</tr>
 		<tr>
-			<td>Quantidade de estoque:</td>
+			<td></td>
+			<td style='text-align: right;'>Quantidade de estoque</td>
 			<td><input class='span2' type='text' name='quantidade_produto' value='<?php echo $produto['quantidade_produto']; ?>' required /></td>
 		</tr>
 		<tr>
-			<td><button class="btn"  type='submit'>Enviar</button></td>
+			<td></td>
+			<td><table><td style='width: 100px;'></td><td><button class='btn' type='submit'>Enviar</button></td></table></td>
 		</tr>
 	</table>
 </form>

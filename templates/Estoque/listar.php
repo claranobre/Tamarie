@@ -1,15 +1,14 @@
-<br /><br />
-<h2>Estoque</h2>
+<table><tr><td style='height: 60px;'></td></tr><tr><td style='height: 100px; width: 590px;'></td><td><h2>Estoque</h2></td></tr></table>
 
 
 <table class='table table-bordered'>
 	<tr>
-		<th>Produto</th>
-		<th>Referencia</th>
-		<th>Quantidade</th>
-		<th>Preço</th>
-		<th>Alterar</th>
-		<th>Remover</th>
+		<th style='text-align: center;'>Produto</th>
+		<th style='text-align: center;'>Referencia</th>
+		<th style='text-align: center;'>Quantidade</th>
+		<th style='text-align: center;'>Preço</th>
+		<th style='text-align: center;'>Alterar</th>
+		<th style='text-align: center;'>Remover</th>
 	</tr>
 
 <?php 
@@ -21,21 +20,21 @@
 		$soma_preco += $quantidade_total*$produto['preco_produto'];
 ?>
 	<tr>
-		<td><?php echo $produto['nome_produto']; ?></td>
-		<td><?php echo $produto['referencia']; ?></td>
-		<td><?php echo $produto['quantidade_produto'].' unidades'; ?></td>
-		<td><?php echo 'R$ '.reverter_float($produto['preco_produto']); ?></td>
-		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/estoque/alterar/?id=<?php echo $produto['id']; ?>'>Alterar</a></td>
-		<td><a class='btn' href='/<?php echo BASE; ?>/index.php/estoque/remover/?id=<?php echo $produto['id']; ?>'>Remover</a></td>
+		<td style='text-align: center;'><?php echo $produto['nome_produto']; ?></td>
+		<td style='text-align: center;'><?php echo $produto['referencia']; ?></td>
+		<td style='text-align: center;'><?php echo $produto['quantidade_produto'].' unidades'; ?></td>
+		<td style='text-align: center;'><?php echo 'R$ '.reverter_float($produto['preco_produto']); ?></td>
+		<td style='text-align: center;'><a class='btn' href='/<?php echo BASE; ?>/index.php/estoque/alterar/?id=<?php echo $produto['id']; ?>'>Alterar</a></td>
+		<td style='text-align: center;'><a class='btn btn-danger' href='/<?php echo BASE; ?>/index.php/estoque/remover/?id=<?php echo $produto['id']; ?>'>Remover</a></td>
 	</tr>
 
 <?php  
     endforeach;
 ?>
-	<th>Total:</th>
+	<th style='text-align: center;'>Total:</th>
 	<th></th>
-	<th><?php echo $quantidade_total.' unidades'; ?></th>
-	<th><?php echo 'R$ '.reverter_float($soma_preco); ?></th>
+	<th style='text-align: center;'><?php echo $quantidade_total.' unidades'; ?></th>
+	<th style='text-align: center;'><?php echo 'R$ '.reverter_float($soma_preco); ?></th>
 	<th></th>
 	<th></th>
 </table>

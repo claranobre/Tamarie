@@ -1,5 +1,5 @@
-<br /><br />
-<h2>Cadastrar Venda</h2>
+<table><tr><td style='height: 60px;'></td></tr><tr><td style='height: 100px; width: 470px;'></td><td><h2>Cadastrar Venda</h2></td></tr></table>
+
 
 <?php 
 

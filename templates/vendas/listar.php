@@ -1,17 +1,16 @@
-<br /><br />
-<h2>Vendas</h2>
+<table><tr><td style='height: 60px;'></td></tr><tr><td style='height: 100px; width: 590px;'></td><td><h2>Vendas</h2></td></tr></table>
 
 
 <table class='table table-bordered'>
 	<tr>
-		<th>Data de Venda</th>
-		<th>Atendente</th>
-		<th>Produto</th>
-		<th>Referencia</th>
-		<th>Quantidade</th>
-		<th>Desconto</th>
-		<th>Preço Unidade</th>
-		<th>Preço Total</th>
+		<th style='text-align: center;'>Data de Venda</th>
+		<th style='text-align: center;'>Atendente</th>
+		<th style='text-align: center;'>Produto</th>
+		<th style='text-align: center;'>Referencia</th>
+		<th style='text-align: center;'>Quantidade</th>
+		<th style='text-align: center;'>Desconto</th>
+		<th style='text-align: center;'>Preço Unidade</th>
+		<th style='text-align: center;'>Preço Total</th>
 	</tr>
 <?php 
 	$quantidade = 0;
@@ -24,28 +23,28 @@
 		$preco_total_vendas += ($produto['preco_total']);
 ?>
 	<tr>
-		<td><?php echo $produto['data_venda']; ?></td>
-		<td><?php echo $produto['atendente']; ?></td>
-		<td><?php echo $produto['nome_produto']; ?></td>
-		<td><?php echo $produto['referencia']; ?></td>
-		<td><?php echo $produto['quantidade']; if($produto['quantidade'] == 1){ echo ' unidade';} else {echo ' unidades';} ?></td>
-		<td><?php echo $produto['desconto']; ?></td>
-		<td><?php echo 'R$ '.reverter_float($produto['preco_unidade']); ?></td>
-		<td><?php echo 'R$ '.reverter_float($produto['preco_total']); ?></td>
+		<td style='text-align: center;'><?php echo $produto['data_venda']; ?></td>
+		<td style='text-align: center;'><?php echo $produto['atendente']; ?></td>
+		<td style='text-align: center;'><?php echo $produto['nome_produto']; ?></td>
+		<td style='text-align: center;'><?php echo $produto['referencia']; ?></td>
+		<td style='text-align: center;'><?php echo $produto['quantidade']; if($produto['quantidade'] == 1){ echo ' unidade';} else {echo ' unidades';} ?></td>
+		<td style='text-align: center;'><?php echo $produto['desconto']; ?></td>
+		<td style='text-align: center;'><?php echo 'R$ '.reverter_float($produto['preco_unidade']); ?></td>
+		<td style='text-align: center;'><?php echo 'R$ '.reverter_float($produto['preco_total']); ?></td>
 	</tr>
 
 <?php  
     endforeach;
 ?>
 	<tr>
-		<th>Total:</th>
+		<th style='text-align: center;'>Total:</th>
 		<th></th>
 		<th></th>
 		<th></th>
-		<th><?php echo $quantidade; if($quantidade == 1){ echo ' unidade';} else {echo ' unidades';} ?></th>
+		<th style='text-align: center;'><?php echo $quantidade; if($quantidade == 1){ echo ' unidade';} else {echo ' unidades';} ?></th>
 		<th></th>
 		<th></th>
-		<th><?php echo 'R$ '.reverter_float($preco_total_vendas); ?></th>
+		<th style='text-align: center;'><?php echo 'R$ '.reverter_float($preco_total_vendas); ?></th>
 	</tr>
 </table>
 

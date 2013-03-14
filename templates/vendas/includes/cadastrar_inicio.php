@@ -3,12 +3,20 @@
 		<?php include_once(TEMPLATES.'/vendas/includes/topo_cadastro.html'); ?>
 		<tbody id='tabela'>
 			<tr>
+				<td style='width: 400px;'></td>
 				<td><input class="span2" type='text' name='referencia[]' required /></td>
 				<td><input class="span2" type='text' name='quantidade[]' required /></td>
 				<td><input class="span2" type='text' name='desconto[]' placeholder='Ex.: 25%' /></td>
 			</tr>
 		</tbody>
 	</table>
-	<button class="btn"  type='submit'>Enviar</button>
-	<a class='btn btn-link' href='#' onClick='add_produto()'>Adicionar mais produto</a></td>
+	<table>
+		<tr>
+			<td style='width: 400px;'></td>
+			<td>
+				<button class='btn btn-success' type='submit'>Enviar</button>
+				<a class='btn btn-info' href='#' onClick='add_produto()'>Adicionar mais produto</a>
+			</td>
+		</tr>
+	</table>
 </form>

@@ -6,10 +6,18 @@ function del_produto(link){
 	tr.remove();
 }
 
+function remover_cliente_endividado(){
+	alert('Não é possível remover um cliente que possui dívida');
+}
+
+function pagar_cliente_sem_divida(){
+	alert('Esse cliente não possui dívidas');
+}
+
 function add_produto(){
 	var tb = document.getElementById('tabela');
 	var tr = document.createElement("tr");
-	tr.innerHTML = "</td><td><input class='span2' type='text' name='referencia[]' required /></td><td><input class='span2' type='text' name='quantidade[]' required /></td><td><input class='span2' type='text' name='desconto[]' placeholder='Ex.: 25%' /></td><td><a class='btn btn-link' href='#' onClick='del_produto(this)'>remover</a></td>";
+	tr.innerHTML = "</td><td></td><td><input class='span2' type='text' name='referencia[]' required /></td><td><input class='span2' type='text' name='quantidade[]' required /></td><td><input class='span2' type='text' name='desconto[]' placeholder='Ex.: 25%' /></td><td><a class='btn btn-danger' href='#' onClick='del_produto(this)'>remover</a></td>";
 	tb.appendChild(tr);
 }
 
