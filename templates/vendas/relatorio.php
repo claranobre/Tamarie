@@ -19,7 +19,7 @@
 			</td>
 			<td style='width: 10px;'></td>
 			<td>
-				<div class="input-append date" id="dp2" data-date="12-03-2013" data-date-format="dd-mm-yyyy">
+				<div class="input-append date" id="dp3" data-date="12-03-2013" data-date-format="dd-mm-yyyy">
 	  				<input class="span2" size="16" type="text" name='data_limite' />
 	  				<span class="add-on"><i class="icon-th"></i></span>
 				</div>

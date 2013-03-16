@@ -1,4 +1,5 @@
 $('#dp2').datepicker();
+$('#dp3').datepicker();
 
 function del_produto(link){
 	td = link.parentNode;
