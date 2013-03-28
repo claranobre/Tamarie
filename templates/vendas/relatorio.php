@@ -1,7 +1,22 @@
 <br /><br />
-<h2>Vendas</h2>
+<h2>Relatorio de Vendas</h2>
 
 
+<form action='/<?php echo BASE; ?>/index.php/vendas/relatorio/' method='post'>
+	<table>
+		<tr>
+			<td>Data Inicial:</td>
+			<td>Data Limite:</td>
+		</tr>
+		<tr>
+			<td><input type='date' name='data_inicial' required/></td>
+			<td><input type='date' name='data_limite' required/></td>
+		</tr>
+	</table>
+	<button type='submit'>Filtar</button>
+</form>
+
+<?php if (count($_POST) > 0): ?>
 <table class='lista'>
 	<tr>
 		<th>Data de Venda</th>
@@ -16,7 +31,7 @@
 <?php 
 	$quantidade = 0;
 	$preco_total_vendas = 0;
-	$vendas = select_all('vendas');
+	$vendas = buscar_relatorio_vendas($_POST['data_inicial'], $_POST['data_limite']);
 	foreach ($vendas as $produto):
 		$produto['data_venda'] = converter_data($produto['data_venda']);
 		reverter_data($produto['data_venda']);
@@ -48,4 +63,4 @@
 		<th><?php echo 'R$ '.reverter_float($preco_total_vendas); ?></th>
 	</tr>
 </table>
-
+<?php endif; ?>

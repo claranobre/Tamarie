@@ -1,15 +1,15 @@
 <?php 
-
+	
 	function reverter_data($dados){
-        $str_tratamento = explode('/', $dados);
-        $str_tratada = $str_tratamento[2].'-'.$str_tratamento[1].'-'.$str_tratamento[0];
+		$str_tratamento = strtotime($dados);
+		$str_tratada = strftime('%Y-%m-%d',$str_tratamento);
         return $str_tratada;
     }
 
     function converter_data($dados){
-		$dados_explode = explode('-', $dados);
-		$dados_tratado = $dados_explode[2].'/'.$dados_explode[1].'/'.$dados_explode[0];
-		return $dados_tratado;
+    	$str_tratamento = strtotime($dados);
+		$str_tratada = strftime('%d/%m/%Y' ,$str_tratamento);
+		return $str_tratada;
 	}
 
 	function converter_float($dados){

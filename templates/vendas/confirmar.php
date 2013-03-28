@@ -1,19 +1,26 @@
 <br /><br />
 <h2>Confirmar Venda</h2>
+
+
 <?php
-	$num = 0;
-	$produtos = array(array());
-	foreach ($_POST['referencia'] as $value) {
-		$nome_produto[] = select('nome_produto', 'estoque', 'referencia', $value);
-		$produtos[$num]['nome_produto'] = $nome_produto[$num]['nome_produto'];
-		$produtos[$num]['referencia'] = $_POST['referencia'][$num];
-		$produtos[$num]['quantidade'] = $_POST['quantidade'][$num];
-		$produtos[$num]['desconto'] = $_POST['desconto'][$num];
-		$num++;
-	}
+	var_dump($_POST);
+	echo '<br /><br /><br />';
+	$referencia = $_POST['referencia'][0];
+	$qant_estoque = select('quantidade_produto', 'estoque', 'referencia', $referencia);
+	var_dump($qant_estoque);
+	// $num = 0;
+	// $produtos = array(array());
+	// foreach ($_POST['referencia'] as $value) {
+	// 	$nome_produto[] = select('nome_produto', 'estoque', 'referencia', $value);
+	// 	$produtos[$num]['nome_produto'] = $nome_produto[$num]['nome_produto'];
+	// 	$produtos[$num]['referencia'] = $_POST['referencia'][$num];
+	// 	$produtos[$num]['quantidade'] = $_POST['quantidade'][$num];
+	// 	$produtos[$num]['desconto'] = $_POST['desconto'][$num];
+	// 	$num++;
+	// }
 ?>
-<table class='lista'>
-	<form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
+<!-- <form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
+	<table class='lista'>
 		<tr>
 			<th>Produto</th>
 			<th>Referencia</th>
@@ -79,5 +86,5 @@
 			<td><button type='submit'>Confirmar Venda</button></td>
 			<td><input type='button' value='Cancelar Venda' onclick='cancelar_venda()'/></td>
 		</tr>
-	</form>
-</table>
+	</table>
+</form> -->

@@ -1,7 +1,9 @@
 <br /><br />
 <h2>Cadastrar Cliente</h2>
-<table class='form'>
-	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+
+
+<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+	<table class='form'>
 		<tr>
 			<td>Nome do cliente:</td>
 			<td><input type='text' name='nome' required/></td>
@@ -30,8 +32,8 @@
 		<tr>
 			<td><button type='submit'>Enviar</button></td>
 		</tr>
-	</form>
-</table>
+	</table>
+</form>
 
 <?php 
 	if (count($_POST) > 0){

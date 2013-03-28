@@ -1,7 +1,9 @@
 <br /><br />
 <h2>Alterar Dados</h2>
-<table class='form'>
-	<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id']; ?>' method='post'>
+
+<form action='<?php echo $_SERVER['PHP_SELF'].'?id='.$_GET['id']; ?>' method='post'>
+	<table class='form'>
+
 <?php  
     $produto = buscar_por_id('estoque', $_GET['id']);
 ?>
@@ -24,8 +26,8 @@
 		<tr>
 			<td><button type='submit'>Enviar</button></td>
 		</tr>
-	</form>
-</table>
+	</table>
+</form>
 
 <?php 
 	if (count($_POST) > 0){

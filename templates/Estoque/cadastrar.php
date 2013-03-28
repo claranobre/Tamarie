@@ -1,7 +1,9 @@
 <br /><br />
 <h2>Cadastrar Estoque</h2>
-<table class='form'>
-	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+
+
+<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+	<table class='form'>	
 		<tr>
 			<td>Nome do produto:</td>
 			<td><input type='text' name='nome_produto' required /></td>
@@ -21,8 +23,8 @@
 		<tr>
 			<td><button type='submit'>Enviar</button></td>
 		</tr>
-	</form>
-</table>
+	</table>
+</form>
 
 <?php 
 	if (count($_POST) > 0){

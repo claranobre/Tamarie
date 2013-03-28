@@ -32,6 +32,7 @@ CREATE TABLE estoque (
 );
 CREATE TABLE vendas (
 	id int NOT NULL auto_increment,
+	data_venda timestamp DEFAULT CURRENT_TIMESTAMP,
 	atendente varchar(255) NOT NULL,
 	nome_produto varchar(255) NOT NULL,
 	referencia varchar(255) NOT NULL,

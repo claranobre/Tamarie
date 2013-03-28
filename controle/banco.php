@@ -56,8 +56,8 @@
 
     // função que executa SQL para SELECT
     // SELECT * FROM $tabela
-    function select_all($tabela){
-        $sql = 'SELECT * from '.$tabela.';';
+    function select_all($tabela, $where=''){
+        $sql = 'SELECT * from '.$tabela.' '.$where.';';
         $resultado = mysql_query($sql);
         if(!$resultado) return array();
         $objetos = array();
@@ -77,11 +77,17 @@
     }
 
     function select($campo, $tabela, $restricao, $identificador){
-        $sql = 'SELECT '.$campo.' from '.$tabela.' WHERE '.$restricao.' = '.$identificador.';';
+        $sql = 'SELECT '.$campo.' from '.$tabela.' WHERE '.$restricao.' = \''.$identificador.'\';';
         $query = mysql_query($sql);
         $resultado = mysql_fetch_assoc($query);
         // var_dump($resultado);
+        // var_dump($sql);
         return $resultado;
+    }
+
+    function buscar_relatorio_vendas($data_inicial, $data_limite){
+        $where = 'where data_venda > \''.$data_inicial.'\' and data_venda < \''.$data_limite.'\'';
+        return select_all('vendas', $where);
     }
 
 ?>

@@ -1,5 +1,7 @@
 <br /><br />
 <h2>Cadastrar Venda</h2>
+
+
 <form action='/<?php echo BASE; ?>/index.php/vendas/confirmar/' method='post'>
 	<table>
 		<thead>
