@@ -2,18 +2,18 @@
 <h2>Relatorio de Vendas</h2>
 
 
-<form action='/<?php echo BASE; ?>/index.php/vendas/relatorio/' method='post'>
+<form class="navbar-form pull-left" action='/<?php echo BASE; ?>/index.php/vendas/relatorio/' method='post'>
 	<table>
 		<tr>
 			<td>Data Inicial:</td>
 			<td>Data Limite:</td>
 		</tr>
 		<tr>
-			<td><input type='date' name='data_inicial' required/></td>
-			<td><input type='date' name='data_limite' required/></td>
+			<td><input class="span2" type='date' name='data_inicial' required/></td>
+			<td><input class="span2" type='date' name='data_limite' required/></td>
 		</tr>
 	</table>
-	<button type='submit'>Filtar</button>
+	<button class="btn"  type='submit'>Filtar</button>
 </form>
 
 <?php if (count($_POST) > 0): ?>

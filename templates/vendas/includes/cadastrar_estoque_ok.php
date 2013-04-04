@@ -10,7 +10,7 @@
 		$num++;
 	}
 ?>
-<form action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
+<form class="navbar-form pull-left" action='/<?php echo BASE; ?>/index.php/vendas/inserir' method='post'>
 	<table class='lista'>
 		<tr>
 			<th>Produto</th>
@@ -69,13 +69,13 @@
 					$string[$key] .= 'preco_total=>'.$preco_total[$key];
 			?>
 
-			<input type='text' name='produtos[]' value='<?php echo $string[$key]; ?>' hidden required />
+			<input class='span2' type='text' name='produtos[]' value='<?php echo $string[$key]; ?>' hidden required />
 
 			<?php endforeach; ?>
 		</tr>
 		<tr>
-			<td><button type='submit'>Confirmar Venda</button></td>
-			<td><input type='button' value='Cancelar Venda' onclick='cancelar_venda()'/></td>
+			<td><button class="btn"  type='submit'>Confirmar Venda</button></td>
+			<td><input class='span2' type='button' value='Cancelar Venda' onclick='cancelar_venda()'/></td>
 		</tr>
 	</table>
 </form>

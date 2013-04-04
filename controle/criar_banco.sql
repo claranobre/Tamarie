@@ -6,7 +6,7 @@ CREATE TABLE clientes (
 	nome varchar(255) NOT NULL,
 	telefone varchar(255) NOT NULL,
 	cpf varchar(255) NULL,
-	endereco varchar(255) NOT NULL,
+	endereco varchar(255) NULL,
 	divida int NULL,
 	data_pagamento date NULL,
 	status varchar(255) NULL,

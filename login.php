@@ -2,17 +2,17 @@
 <br /><br />
 <h2>Sistema TAMARIE</h2>
 <table>
-	<form action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
+	<form class="navbar-form pull-left" action='<?php echo $_SERVER['PHP_SELF']?>' method='post'>
 		<tr>
 			<td>Login: </td>
-			<td><input name='login' required/></td>
+			<td><input class='span2' name='login' required/></td>
 		</tr>
 		<tr>
 			<td>Senha: </td>
-			<td><input name='senha' type='password' required/></td>
+			<td><input class='span2' name='senha' type='password' required/></td>
 		</tr>
 		<tr>
-			<td><button type='submit'>Enviar</button>
+			<td><button class="btn"  type='submit'>Enviar</button>
 		</tr>
 	</form>
 </table>
